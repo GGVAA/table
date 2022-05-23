@@ -1,0 +1,127 @@
+html {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: lightgray;
+}
+
+table {
+  background-color: white;
+  border-radius: 1em;
+  font-size: 1em;
+  overflow: hidden;
+  border-collapse: collapse;
+  text-align: left;
+  color: dimgray;
+}
+
+table a {
+  color: gray;
+}
+
+table img {
+  display: block;
+  margin: auto;
+}
+
+table td,
+table th {
+  padding: 1rem 0.75rem;
+}
+
+table th {
+  border-bottom: 1px solid lightgray;
+  color: gray;
+  padding-top: 1.5em;
+  padding-bottom: 1.5em;
+}
+
+table td:first-child,
+table th:first-child {
+  padding-left: 1.5rem;
+}
+
+table td:last-child,
+table th:last-child {
+  padding-right: 1.5rem;
+}
+
+table td.data > div:first-child {
+  font-weight: bold;
+  margin-bottom: 0.5em;
+}
+
+table td.data > div:nth-child(2) {
+  color: gray;
+  font-size: 0.85em;
+}
+
+table td.date,
+table td.total {
+  font-weight: bold;
+}
+
+table td.total {
+  font-size: 1.15em;
+}
+
+table td.status {
+  font-size: 0.75em;
+  font-weight: bold;
+}
+
+table td.status .done {
+  color: limegreen;
+}
+
+table td.status .done::before {
+  content: "";
+  display: block;
+  width: 0.8em;
+  height: 0.8em;
+  box-sizing: border-box;
+  border: 0.3em solid limegreen;
+  border-radius: 0.4em;
+  display: inline-block;
+  margin-right: 0.5em;
+}
+
+table td.status .pending {
+  color: orange;
+}
+
+table td.status .pending::before {
+  content: "";
+  display: block;
+  width: 0.8em;
+  height: 0.8em;
+  box-sizing: border-box;
+  border: 0.3em solid orange;
+  border-radius: 0.4em;
+  display: inline-block;
+  margin-right: 0.5em;
+}
+
+table td.menu div {
+  font-weight: bold;
+  font-size: 1.5em;
+  cursor: pointer;
+  transform: rotate(90deg);
+  user-select: none;
+}
+
+table td.pages {
+  text-align: right;
+}
+
+table td.pages div {
+  border: 0.1em solid lightgray;
+  font-weight: bold;
+  width: 2.25em;
+  height: 2.25em;
+  line-height: 2.25em;
+  text-align: center;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 0 0.25em;
+  cursor: pointer;
+  user-select: none;
+}
