@@ -3,161 +3,72 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=<device-width>, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width", initial-scale="1.0" />
     <link rel="stylesheet" href="tab.css" />
     <title>newtab</title>
   </head>
   <body>
+    <div id="listContainer" class="listContainer">
+      <div id="firstListElement" class="listItem">Пошук за:</div>
+
+      <div id="companyNameItem" class="listItem">
+        <div id="clickElement1" class="itemInnerDiv">за назвою компанії</div>
+        <div class="itemInnerDiv" id="SearchByNameContainer">
+          <div>Name of company</div>
+          <input id="search" type="text" />
+          <button id="closeElement1">CLose</button>
+        </div>
+      </div>
+      <div id="userNameItem" class="listItem">
+        <div class="itemInnerDiv" id="clickElement2">за ім ям користувача</div>
+        <div class="itemInnerDiv">
+          <div>User name</div>
+          <input id="searchByName" type="text" />
+          <button id="closeElement2">CLose</button>
+        </div>
+      </div>
+
+      <div id="userStatusItem" class="listItem">
+        <div class="itemInnerDiv" id="clickElement3">за статусом</div>
+        <div class="itemInnerDiv">
+          <div>Status</div>
+
+          <input id="radioDone" type="radio" value="Done" name="status" />
+          <label for="radioDone">Done</label>
+
+          <input id="radioPending" type="radio" value="Pending" name="status" />
+          <label for="radioPending">Pending</label>
+          <button id="closeElement3">CLose</button>
+        </div>
+      </div>
+      <div id="userDateItem" class="listItem">
+        <div id="clickElement4" class="itemInnerDiv">за датою</div>
+
+        <div class="itemInnerDiv">
+          <input id="firstDate1" type="date" />
+          <input id="lastDate2" type="date" />
+          <button id="searchByDate">Search</button>
+          <button id="closeElement4">CLose</button>
+        </div>
+      </div>
+    </div>
+
     <table>
-      <tbody>
+      <tbody id="tbody">
         <tr>
           <th></th>
           <th colspan="2">Name</th>
           <th colspan="2">User credentials</th>
           <th>Last Transcation</th>
           <th>Status</th>
-          <th>End date</th>
+          <th>End date1</th>
           <th>Total User</th>
           <th></th>
         </tr>
-        <tr>
-          <td><input type="checkbox" /></td>
-          <td>
-            <img class="img_ro" src="img/1Tab.png" alt="figma" />
-          </td>
-          <td class="data">
-            <div>Figma</div>
-            <div><a href="https://www.figma.com/">Figma</a></div>
-          </td>
-          <td class="data">
-            <div>Visa</div>
-            <div>***** 2468</div>
-          </td>
-          <td class="data">
-            <div>Itai Bracha</div>
-            <div>ItaiBracha31@gmail.com</div>
-          </td>
-          <td class="data">
-            <div>Jan2,2022</div>
-            <div>$783,22</div>
-          </td>
-          <td class="status"><div class="done">Done</div></td>
-          <td class="date">Jan2,2022</td>
-          <td class="total">$783,22</td>
-          <td class="menu"><div>...</div></td>
-        </tr>
 
-        <tr>
-          <td><input type="checkbox" /></td>
-          <td><img src="img/2Tab.png" alt="Adobe XD" /></td>
-          <td class="data">
-            <div>Abode XD</div>
-            <div>"https:www.adob.com"</div>
-          </td>
-          <td class="data">
-            <div>Visa</div>
-            <div>***** 2468</div>
-          </td>
-          <td class="data">
-            <div>Itai Bracha</div>
-            <div>ItaiBracha31@gmail.com</div>
-          </td>
-          <td class="data">
-            <div>Jan2,2022</div>
-            <div>$783,22</div>
-          </td>
-          <td class="status"><div class="done">Done</div></td>
-          <td class="date">Jan2,2022</td>
-          <td class="total">$783,22</td>
-          <td class="menu"><div>...</div></td>
-        </tr>
-
-        <tr>
-          <td><input type="checkbox" /></td>
-          <td><img src="img/3Tab.png" alt="Mailchimp" /></td>
-          <td class="data">
-            <div>Mailchimp</div>
-            <div>Https://malichimp.com</div>
-          </td>
-          <td class="data">
-            <div>Visa</div>
-            <div>***** 2468</div>
-          </td>
-          <td class="data">
-            <div>Itai Bracha</div>
-            <div>ItaiBracha31@gmail.com</div>
-          </td>
-          <td class="data">
-            <div>Jan2,2022</div>
-            <div>$783,22</div>
-          </td>
-          <td class="status"><div class="done">Done</div></td>
-          <td class="date">Jan2,2022</td>
-          <td class="total">$783,22</td>
-          <td class="menu"><div>...</div></td>
-        </tr>
-
-        <tr>
-          <td><input type="checkbox" /></td>
-          <td><img src="img/4Tab.png" alt="WIX" /></td>
-          <td class="data">
-            <div>WIX</div>
-            <div>https://www.vix.com</div>
-          </td>
-          <td class="data">
-            <div>Visa</div>
-            <div>***** 2468</div>
-          </td>
-          <td class="data">
-            <div>ItaiBracha</div>
-            <div>ItaiBracha31@gmail.com</div>
-          </td>
-          <td class="data">
-            <div>Jan 2,2022</div>
-            <div>$783,22</div>
-          </td>
-          <td class="status"><div class="pending">Pending</div></td>
-          <td class="date">Jan 2,2022</td>
-          <td class="total">$783,22</td>
-          <td class="menu"><div>...</div></td>
-        </tr>
-
-        <tr>
-          <td><input type="checkbox" /></td>
-          <td><img src="img/5Tab.png" alt="Youtube" /></td>
-          <td class="data">
-            <div>Youtube</div>
-            <div>https://www.Youtube.com</div>
-          </td>
-          <td class="data">
-            <div>Visa</div>
-            <div>***** 2468</div>
-          </td>
-          <td class="data">
-            <div>ItaiBracha</div>
-            <div>ItaiBracha31@gmail.com</div>
-          </td>
-          <td class="data">
-            <div>Jan 2,2022</div>
-            <div>$783,22</div>
-          </td>
-          <td class="status"><div class="done">Done</div></td>
-          <td class="date">Jan 2,2022</td>
-          <td class="total">$783,22</td>
-          <td class="menu"><div>...</div></td>
-        </tr>
-
-        <tr>
-          <td colspan="10" class="pages">
-            <div><</div>
-            <div>1</div>
-            <div>2</div>
-            <div>3</div>
-            <div>4</div>
-            <div>></div>
-          </td>
-        </tr>
+        <tr></tr>
       </tbody>
     </table>
+    <script src="./tab.js"></script>
   </body>
 </html>

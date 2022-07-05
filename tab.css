@@ -54,7 +54,7 @@ table td.data > div:nth-child(2) {
   font-size: 0.85em;
 }
 
-table td.date,
+table td.date1,
 table td.total {
   font-weight: bold;
 }
@@ -124,4 +124,45 @@ table td.pages div {
   margin: 0 0.25em;
   cursor: pointer;
   user-select: none;
+}
+.listContainer {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  height: 50px;
+  overflow-y: hidden;
+
+  transition-duration: 1s;
+}
+.firstListElementChanged {
+  background-color: aqua;
+}
+.listContainerChanged {
+  height: 250px;
+}
+.listItem {
+  width: 298px;
+  max-width: 298px;
+  height: 48px;
+  min-height: 48px;
+  border: 1px solid grey;
+  display: flex;
+  overflow: hidden;
+  transition-duration: 0.3s;
+}
+.listItem:hover {
+  background-color: gray;
+}
+#firstListElement:hover {
+  background-color: aqua;
+}
+.companyNameItemChanged {
+  width: 598px;
+  max-width: 598px;
+}
+
+.itemInnerDiv {
+  width: 298px;
+  min-width: 298px;
+  height: 50px;
 }
