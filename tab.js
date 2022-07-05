@@ -91,39 +91,36 @@ const tableData = [
 console.log(tableData);
 
 const tbody = document.getElementById("tbody");
-// const tr = document.createElement('tr')
 
 tbody.innerHTML =
   tbody.innerHTML +
   tableData.map((row) => {
     return `
         <tr>
-      <td><input type="checkbox" name="checkbox-${row.id}"/></td>
-      <td>
-        <img class="img_ro" src="${row.logo}" alt="figma" />
-      </td>
-      <td class="data">
-        <div>${row.logoName}</div>
-        <div><a href="${row.link}">${row.logoName}</a></div>
-      </td>
-      <td class="data">
-        <div>${row.cardType}</div>
-        <div>${row.cardNumber}</div>
-      </td>
-      <td class="data">
-        <div>${row.name}</div>
-        <div>${row.email}</div>
-      </td>
-      <td class="data">
-        <div>${row.date1}</div>
-        <div>${row.transaction}</div>
-      </td>
-      <td class="status"><div class="${row.status.toLowerCase()}">${
-      row.status
-    }</div></td>
-      <td class="date1">${row.date2}</td>
-      <td id="totalMoney1" class="total">${row.transaction}</td>
-      <td class="menu"><div>${row.dot}</div></td>
+            <td><input type="checkbox" name="checkbox-${row.id}"/></td>
+            <td>
+              <img class="img_ro" src="${row.logo}" alt="figma" />
+            </td>
+            <td class="data">
+              <div>${row.logoName}</div>
+              <div><a href="${row.link}">${row.logoName}</a></div>
+            </td>
+            <td class="data">
+              <div>${row.cardType}</div>
+              <div>${row.cardNumber}</div>
+            </td>
+            <td class="data">
+              <div>${row.name}</div>
+              <div>${row.email}</div>
+            </td>
+            <td class="data">
+              <div>${row.date1}</div>
+              <div>${row.transaction}</div>
+            </td>
+            <td class="status"><div class="${row.status.toLowerCase()}">${row.status}</div></td>
+            <td class="date1">${row.date2}</td>
+            <td id="totalMoney1" class="total">${row.transaction}</td>
+            <td class="menu"><div>${row.dot}</div></td>
       </tr>
 
   `;
@@ -142,59 +139,60 @@ searchInput.addEventListener("keyup", () => {
     console.log("ми знайшли елемент");
     tbody.innerHTML =
       `<tr>
-  <th></th>
-  <th colspan="2">Name</th>
-  <th colspan="2">User credentials</th>
-  <th>Last Transcation</th>
-  <th>Status</th>
-  <th>End date1</th>
-  <th>Total User</th>
-  <th></th>
-</tr>` +
+          <th></th>
+          <th colspan="2">Name</th>
+          <th colspan="2">User credentials</th>
+          <th>Last Transcation</th>
+          <th>Status</th>
+          <th>End date1</th>
+          <th>Total User</th>
+          <th></th>
+      </tr>` +
       newMassive.map((row) => {
         return `
       <tr>
-    <td><input type="checkbox" name="checkbox-${row.id}"/></td>
-    <td>
-      <img class="img_ro" src="${row.logo}" alt="figma" />
-    </td>
-    <td class="data">
-      <div>${row.logoName}</div>
-      <div><a href="${row.link}">${row.logoName}</a></div>
-    </td>
-    <td class="data">
-      <div>${row.cardType}</div>
-      <div>${row.cardNumber}</div>
-    </td>
-    <td class="data">
-      <div>${row.name}</div>
-      <div>${row.email}</div>
-    </td>
-    <td class="data">
-      <div>${row.date1}</div>
-      <div>${row.transaction}</div>
-    </td>
-    <td class="status"><div class="${row.status.toLowerCase()}">${
-          row.status
-        }</div></td>
-    <td class="date1">${row.date2}</td>
-    <td id="totalMoney1" class="total">${row.transaction}</td>
-    <td class="menu"><div>${row.dot}</div></td>
+          <td><input type="checkbox" name="checkbox-${row.id}"/></td>
+          <td>
+            <img class="img_ro" src="${row.logo}" alt="figma" />
+          </td>
+          <td class="data">
+            <div>${row.logoName}</div>
+            <div><a href="${row.link}">${row.logoName}</a></div>
+          </td>
+          <td class="data">
+            <div>${row.cardType}</div>
+            <div>${row.cardNumber}</div>
+          </td>
+          <td class="data">
+            <div>${row.name}</div>
+            <div>${row.email}</div>
+          </td>
+          <td class="data">
+            <div>${row.date1}</div>
+            <div>${row.transaction}</div>
+          </td>
+          <td class="status"><div class="${row.status.toLowerCase()}">${
+                row.status
+              }</div></td>
+          <td class="date1">${row.date2}</td>
+          <td id="totalMoney1" class="total">${row.transaction}</td>
+          <td class="menu"><div>${row.dot}</div></td>
     </tr>
 `;
       });
   } else {
     console.log("ми не знайшли елемент");
-    tbody.innerHTML = `<tr>
-  <th></th>
-  <th colspan="2">Name</th>
-  <th colspan="2">User credentials</th>
-  <th>Last Transcation</th>
-  <th>Status</th>
-  <th>End date1</th>
-  <th>Total User</th>
-  <th></th>
-</tr>`;
+    tbody.innerHTML = 
+    `<tr>
+        <th></th>
+        <th colspan="2">Name</th>
+        <th colspan="2">User credentials</th>
+        <th>Last Transcation</th>
+        <th>Status</th>
+        <th>End date1</th>
+        <th>Total User</th>
+        <th></th>
+    </tr>`;
   }
 });
 // ==================================================================
@@ -283,59 +281,60 @@ radiobuttonDone.addEventListener("click", () => {
     console.log("ми знайшли елемент");
     tbody.innerHTML =
       `<tr>
-  <th></th>
-  <th colspan="2">Name</th>
-  <th colspan="2">User credentials</th>
-  <th>Last Transcation</th>
-  <th>Status</th>
-  <th>End date1</th>
-  <th>Total User</th>
-  <th></th>
-</tr>` +
+          <th></th>
+          <th colspan="2">Name</th>
+          <th colspan="2">User credentials</th>
+          <th>Last Transcation</th>
+          <th>Status</th>
+          <th>End date1</th>
+          <th>Total User</th>
+          <th></th>
+      </tr>` +
       newMassive.map((row) => {
         return `
       <tr>
-    <td><input type="checkbox" name="checkbox-${row.id}"/></td>
-    <td>
-      <img class="img_ro" src="${row.logo}" alt="figma" />
-    </td>
-    <td class="data">
-      <div>${row.logoName}</div>
-      <div><a href="${row.link}">${row.logoName}</a></div>
-    </td>
-    <td class="data">
-      <div>${row.cardType}</div>
-      <div>${row.cardNumber}</div>
-    </td>
-    <td class="data">
-      <div>${row.name}</div>
-      <div>${row.email}</div>
-    </td>
-    <td class="data">
-      <div>${row.date1}</div>
-      <div>${row.transaction}</div>
-    </td>
-    <td class="status"><div class="${row.status.toLowerCase()}">${
-          row.status
-        }</div></td>
-    <td class="date1">${row.date2}</td>
-    <td id="totalMoney1" class="total">${row.transaction}</td>
-    <td class="menu"><div>${row.dot}</div></td>
-    </tr>
+        <td><input type="checkbox" name="checkbox-${row.id}"/></td>
+        <td>
+          <img class="img_ro" src="${row.logo}" alt="figma" />
+        </td>
+        <td class="data">
+          <div>${row.logoName}</div>
+          <div><a href="${row.link}">${row.logoName}</a></div>
+        </td>
+        <td class="data">
+          <div>${row.cardType}</div>
+          <div>${row.cardNumber}</div>
+        </td>
+        <td class="data">
+          <div>${row.name}</div>
+          <div>${row.email}</div>
+        </td>
+        <td class="data">
+          <div>${row.date1}</div>
+          <div>${row.transaction}</div>
+        </td>
+        <td class="status"><div class="${row.status.toLowerCase()}">${
+              row.status
+            }</div></td>
+        <td class="date1">${row.date2}</td>
+        <td id="totalMoney1" class="total">${row.transaction}</td>
+        <td class="menu"><div>${row.dot}</div></td>
+       </tr>
 `;
       });
   } else {
     console.log("ми не знайшли елемент");
-    tbody.innerHTML = `<tr>
-  <th></th>
-  <th colspan="2">Name</th>
-  <th colspan="2">User credentials</th>
-  <th>Last Transcation</th>
-  <th>Status</th>
-  <th>End date1</th>
-  <th>Total User</th>
-  <th></th>
-</tr>`;
+    tbody.innerHTML = 
+    `<tr>
+        <th></th>
+        <th colspan="2">Name</th>
+        <th colspan="2">User credentials</th>
+        <th>Last Transcation</th>
+        <th>Status</th>
+        <th>End date1</th>
+        <th>Total User</th>
+        <th></th>
+    </tr>`;
   }
 });
 let radiobuttonPending = document.getElementById("radioPending");
@@ -351,59 +350,58 @@ radiobuttonPending.addEventListener("click", () => {
     console.log("ми знайшли елемент");
     tbody.innerHTML =
       `<tr>
-  <th></th>
-  <th colspan="2">Name</th>
-  <th colspan="2">User credentials</th>
-  <th>Last Transcation</th>
-  <th>Status</th>
-  <th>End date1</th>
-  <th>Total User</th>
-  <th></th>
-</tr>` +
+          <th></th>
+          <th colspan="2">Name</th>
+          <th colspan="2">User credentials</th>
+          <th>Last Transcation</th>
+          <th>Status</th>
+          <th>End date1</th>
+          <th>Total User</th>
+          <th></th>
+      </tr>` +
       newMassive.map((row) => {
         return `
       <tr>
-    <td><input type="checkbox" name="checkbox-${row.id}"/></td>
-    <td>
-      <img class="img_ro" src="${row.logo}" alt="figma" />
-    </td>
-    <td class="data">
-      <div>${row.logoName}</div>
-      <div><a href="${row.link}">${row.logoName}</a></div>
-    </td>
-    <td class="data">
-      <div>${row.cardType}</div>
-      <div>${row.cardNumber}</div>
-    </td>
-    <td class="data">
-      <div>${row.name}</div>
-      <div>${row.email}</div>
-    </td>
-    <td class="data">
-      <div>${row.date1}</div>
-      <div>${row.transaction}</div>
-    </td>
-    <td class="status"><div class="${row.status.toLowerCase()}">${
-          row.status
-        }</div></td>
-    <td class="date1">${row.date2}</td>
-    <td id="totalMoney1" class="total">${row.transaction}</td>
-    <td class="menu"><div>${row.dot}</div></td>
-    </tr>
+          <td><input type="checkbox" name="checkbox-${row.id}"/></td>
+          <td>
+            <img class="img_ro" src="${row.logo}" alt="figma" />
+          </td>
+          <td class="data">
+            <div>${row.logoName}</div>
+            <div><a href="${row.link}">${row.logoName}</a></div>
+          </td>
+          <td class="data">
+            <div>${row.cardType}</div>
+            <div>${row.cardNumber}</div>
+          </td>
+          <td class="data">
+            <div>${row.name}</div>
+            <div>${row.email}</div>
+          </td>
+          <td class="data">
+            <div>${row.date1}</div>
+            <div>${row.transaction}</div>
+          </td>
+          <td class="status"><div class="${row.status.toLowerCase()}">${row.status}</div></td>
+          <td class="date1">${row.date2}</td>
+          <td id="totalMoney1" class="total">${row.transaction}</td>
+          <td class="menu"><div>${row.dot}</div></td>
+      </tr>
 `;
       });
   } else {
     console.log("ми не знайшли елемент");
-    tbody.innerHTML = `<tr>
-  <th></th>
-  <th colspan="2">Name</th>
-  <th colspan="2">User credentials</th>
-  <th>Last Transcation</th>
-  <th>Status</th>
-  <th>End date1</th>
-  <th>Total User</th>
-  <th></th>
-</tr>`;
+    tbody.innerHTML = 
+    `<tr>
+      <th></th>
+      <th colspan="2">Name</th>
+      <th colspan="2">User credentials</th>
+      <th>Last Transcation</th>
+      <th>Status</th>
+      <th>End date1</th>
+      <th>Total User</th>
+      <th></th>
+    </tr>`;
   }
 });
 
@@ -486,58 +484,56 @@ let searchByDate = document
       console.log("ми знайшли елемент");
       tbody.innerHTML =
         `<tr>
-  <th></th>
-  <th colspan="2">Name</th>
-  <th colspan="2">User credentials</th>
-  <th>Last Transcation</th>
-  <th>Status</th>
-  <th>End date1</th>
-  <th>Total User</th>
-  <th></th>
-</tr>` +
+            <th></th>
+            <th colspan="2">Name</th>
+            <th colspan="2">User credentials</th>
+            <th>Last Transcation</th>
+            <th>Status</th>
+            <th>End date1</th>
+            <th>Total User</th>
+            <th></th>
+        </tr>` +
         newMassive.map((row) => {
           return `
-      <tr>
-    <td><input type="checkbox" name="checkbox-${row.id}"/></td>
-    <td>
-      <img class="img_ro" src="${row.logo}" alt="figma" />
-    </td>
-    <td class="data">
-      <div>${row.logoName}</div>
-      <div><a href="${row.link}">${row.logoName}</a></div>
-    </td>
-    <td class="data">
-      <div>${row.cardType}</div>
-      <div>${row.cardNumber}</div>
-    </td>
-    <td class="data">
-      <div>${row.name}</div>
-      <div>${row.email}</div>
-    </td>
-    <td class="data">
-      <div>${row.date1}</div>
-      <div>${row.transaction}</div>
-    </td>
-    <td class="status"><div class="${row.status.toLowerCase()}">${
-            row.status
-          }</div></td>
-    <td class="date1">${row.date2}</td>
-    <td id="totalMoney1" class="total">${row.transaction}</td>
-    <td class="menu"><div>${row.dot}</div></td>
-    </tr>
-`;
+        <tr>
+            <td><input type="checkbox" name="checkbox-${row.id}"/></td>
+            <td>
+              <img class="img_ro" src="${row.logo}" alt="figma" />
+            </td>
+            <td class="data">
+              <div>${row.logoName}</div>
+              <div><a href="${row.link}">${row.logoName}</a></div>
+            </td>
+            <td class="data">
+              <div>${row.cardType}</div>
+              <div>${row.cardNumber}</div>
+            </td>
+            <td class="data">
+              <div>${row.name}</div>
+              <div>${row.email}</div>
+            </td>
+            <td class="data">
+              <div>${row.date1}</div>
+              <div>${row.transaction}</div>
+            </td>
+            <td class="status"><div class="${row.status.toLowerCase()}">${row.status}</div></td>
+            <td class="date1">${row.date2}</td>
+            <td id="totalMoney1" class="total">${row.transaction}</td>
+            <td class="menu"><div>${row.dot}</div></td>
+        </tr>`;
         });
     } else {
       console.log("ми не знайшли елемент");
-      tbody.innerHTML = `<tr>
-  <th></th>
-  <th colspan="2">Name</th>
-  <th colspan="2">User credentials</th>
-  <th>Last Transcation</th>
-  <th>Status</th>
-  <th>End date1</th>
-  <th>Total User</th>
-  <th></th>
-</tr>`;
+      tbody.innerHTML = 
+        `<tr>
+            <th></th>
+            <th colspan="2">Name</th>
+            <th colspan="2">User credentials</th>
+            <th>Last Transcation</th>
+            <th>Status</th>
+            <th>End date1</th>
+            <th>Total User</th>
+            <th></th>
+        </tr>`;
     }
   });
