@@ -5,24 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width" initial-scale="1.0" />
     <link rel="stylesheet" href="../css/tab.css" />
-
     <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
-
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
-    <title>newtab</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+    <title>Transactions</title>
   </head>
   <body>
     <h1>Transactions</h1>
-   <!-- <div id="listContainer" class="listContainer">
-          <input id="radioPending" type="radio" value="Pending" name="status" />
-          <label for="radioPending">Pending</label>
-          <button id="closeElement3">CLose</button>
-        </div>
-      </div> -->
+    <button class="button_sorting" id="buttonSorting1">Sort form small to big</button>
+    <button class="button_sorting" id="buttonSorting2">Sort from big to small</button>
     <div class="menuContainer"> 
-      <input placeholder="DD/MM/YYYY - DD/MM/YYYY" type="text" name="daterange" />
       <div class="menuItem">
         <img src="../img/search.svg" alt="search"> <input id="search" type="text" placeholder="search for name..">
       </div>
@@ -33,37 +26,26 @@
         <img src="../img/status.svg" alt="status"> <input id='statusInput' type="text" placeholder="search for status..">
       </div>
       <div class="menuItem">
-        <img src="../img/search.svg" alt="date" > <input id="firstDate1" type="date" placeholder="First date..">
+        <input  id="firstDate1" placeholder="DD/MM/YYYY - DD/MM/YYYY" type="text" name="daterange" />
       </div>
       <div class="menuItem">
-        <img src="../img/search.svg"  alt="date"> <input id="lastDate2" type="date" placeholder="Second date..">
+        <input  id="lastDate2" placeholder="DD/MM/YYYY - DD/MM/YYYY" type="text" name="daterange2" />
       </div>
-      <div class="menuItem">
-        <button class="button_sorting" id="buttonSorting"></button>
-      </div>
-      
-      
     </div>   
     <main>
       <table>
         <thead>
-          <tr>
-            <th></th>
-            <th colspan="2">Name</th>
-            <th colspan="2">User credentials</th>
+          <tr class="tableHeader">
+            <th  class="headerName">Name</th>
+            <th class="headerCredentials">User credentials</th>
             <th>Last Transcation</th>
-            <th>Status</th>
+            <th class="headerStatus">Status</th>
             <th>End date</th>
             <th>Total User</th>
-            <th></th>
           </tr>
         </thead>
-        <tbody class="list" id="tbody">
-        
-        </tbody>
-        <tfoot class="pagenumbers" id="pagination" >
-         
-         </tfoot>
+        <tbody class="list" id="tbody"></tbody>
+        <tfoot class="pagenumbers" id="pagination"></tfoot>
       </table>  
     </main>  
     <script src="../js/moment.js"></script>

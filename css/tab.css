@@ -57,7 +57,7 @@ table th:last-child {
 
 table td.data > div:first-child {
   font-weight: bold;
-  margin-bottom: 0.5em;
+  margin-bottom: 5px;
 }
 
 table td.data > div:nth-child(2) {
@@ -136,6 +136,20 @@ table td.pages div {
   cursor: pointer;
   user-select: none;
 }
+.tableHeader{
+  width:1000px;
+  display: flex;
+  padding-left: 65px;
+}
+.headerName{
+  margin-right: 95px;
+}
+.headerCredentials{
+  margin-right: 180px;
+}
+.headerStatus{
+  margin-right: 5px;
+}
 tfoot{
   width:100%;
 }
@@ -144,7 +158,8 @@ tfoot{
   display: flex;
   justify-content: space-between;
   width:1000px;
-  margin-top: 32px
+  margin-top: 32px;
+  margin-bottom: 10px;
 }
 .menuItem{
   height: 42px;
@@ -152,11 +167,12 @@ tfoot{
   border:1px solid grey;
   border-radius: 8px;
   display: flex;
-  justify-content: center;
+  justify-content: start;
+  padding-left: 3px;
   align-items: center;
 }
 .menuItem input{
-  width: 150px;
+  width: 170px;
   margin-left: 10px;
   background-color: inherit;
   outline: none;
@@ -184,8 +200,50 @@ tfoot{
 }
 .item{
   width:1000px;
+  display: flex;
+  
 }
-
+.checkBoxColumn{
+  width:35px;
+  min-width: 35px;
+}
+.companyNameColumn{
+  width:135px;
+  min-width: 135px;
+  display: flex;
+}
+.cardColumn{
+  width:140px;
+  min-width: 140px;
+}
+.userName{
+  width: 175px;
+  min-width: 175px;
+}
+.endDate{
+  width:130px;
+  min-width: 130px;
+}
+.status{
+  width:65px;
+  min-width: 65px;
+}
+.dateColumn{
+  width:70px;
+  min-width: 70px;
+}
+.total{
+  width:85px;
+  min-width: 85px;
+}
+.date1{
+  width:55px;
+  min-width:55px;
+}
+.totalMoney{
+  width:85px;
+  min-width: 85px;
+}
 main .list {
 	width: 100%;
 	max-width: 768px;
@@ -197,9 +255,9 @@ main .list {
 
 
 .pagenumbers {
+  width:1030px;
 	display: flex;
-  justify-content: flex-end;
-	justify-content: center;
+	justify-content: flex-end;
 	align-items: center;
 }
 
@@ -229,4 +287,50 @@ main .list {
 .pagenumbers tr.active {
 	background-color: #9aaca5;
 	box-shadow: inset 0px 0px 4px rgba(0, 0, 0, 0.2);
+}
+
+
+.img_ro{
+  width:30px;
+  height:30px;
+  margin: 0;
+  margin-right: 30px;
+}
+.active{
+  background-color: green;
+}
+.gapColumn{
+  width:35px;
+  min-width: 35px;
+}
+.logo{
+  margin-bottom: 8px;
+}
+.companyName{
+  width:150px;
+  min-width: 150px;
+}
+.cardsColumn{
+  width:120px;
+  min-width: 120px;
+}
+.userName{
+  width:150px;
+  min-width: 150px;
+}
+.lastTransactionColumn{
+  width:120px;
+  min-width: 120px;
+}
+.button_sorting{
+  border: 1px solid grey;
+  border-radius: 8px;
+  width:150px;
+  height:50px;
+  background-color: lightgray;
+  margin:10px 10px 10px 0px;
+}
+.active{
+  background-color: #9aaca5;
+  color:white;
 }
