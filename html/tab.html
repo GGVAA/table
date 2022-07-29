@@ -13,8 +13,6 @@
   </head>
   <body>
     <h1>Transactions</h1>
-    <button class="button_sorting" id="buttonSorting1">Sort form small to big</button>
-    <button class="button_sorting" id="buttonSorting2">Sort from big to small</button>
     <div class="menuContainer"> 
       <div class="menuItem">
         <img src="../img/search.svg" alt="search"> <input id="search" type="text" placeholder="search for name..">
@@ -23,7 +21,8 @@
         <img src="../img/user.svg" alt="user"> <input id="searchByName" type="text" placeholder="search for employee..">
       </div>
       <div class="menuItem">
-        <img src="../img/status.svg" alt="status"> <input id='statusInput' type="text" placeholder="search for status..">
+        <input type="radio" name="statusCheck" onchange="check()" value='done' ><div>Done</div>
+        <input type="radio" name="statusCheck" onchange="check()" value='pending'><div>Pending</div>
       </div>
       <div class="menuItem">
         <input  id="firstDate1" placeholder="DD/MM/YYYY - DD/MM/YYYY" type="text" name="daterange" />
@@ -31,7 +30,8 @@
       <div class="menuItem">
         <input  id="lastDate2" placeholder="DD/MM/YYYY - DD/MM/YYYY" type="text" name="daterange2" />
       </div>
-    </div>   
+      <div class="sortClickContainer"><img src="../img/download.svg"></div>
+    </div>
     <main>
       <table>
         <thead>
@@ -41,7 +41,7 @@
             <th>Last Transcation</th>
             <th class="headerStatus">Status</th>
             <th>End date</th>
-            <th>Total User</th>
+            <th class="totalHeader">Total User</th>
           </tr>
         </thead>
         <tbody class="list" id="tbody"></tbody>

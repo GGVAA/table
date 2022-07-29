@@ -386,29 +386,26 @@ const tableData = [
     dot: "...",
   },
 ];
-let newMassive = [];
-
+let newMassive = []; 
 let dateStartMassive = "";
 let dateEndMassive = "";
 let dateStartMassive2 = "";
 let dateEndMassive2 = "";
-
+let status 
+let StatusArr=document.getElementsByName("statusCheck");
 let currentPage = 1;
 let rows = 5;
 const tbodyDiv = document.getElementById("tbody");
 const paginationElement = document.getElementById("pagination");
 let searchInput = document.getElementById("search");
 let searchInputByName = document.getElementById("searchByName");
-let statusInput = document.getElementById("statusInput");
 let date1 = document.getElementById("firstDate1");
 let date2 = document.getElementById("lastDate2");
 
-let buttonSorting1 = document.getElementById("buttonSorting1");
-let buttonSorting2 = document.getElementById("buttonSorting2");
+let sortClickImg = document.querySelector('.sortClickContainer');
 
-buttonSorting1.addEventListener("click", () => {
-  buttonSorting1.classList.add("active");
-  buttonSorting2.classList.remove("active");
+sortClickImg.addEventListener('click',()=>{
+  sortClickImg.classList.toggle('transform')
   if (newMassive.length !== 0) {
     DisplayList(newMassive, tbodyDiv, rows, currentPage);
     document.getElementById("pagination").innerHTML = "";
@@ -418,31 +415,18 @@ buttonSorting1.addEventListener("click", () => {
     document.getElementById("pagination").innerHTML = "";
     SetupPagination(tableData, paginationElement, rows);
   }
-});
-buttonSorting2.addEventListener("click", () => {
-  buttonSorting2.classList.add("active");
-  buttonSorting1.classList.remove("active");
-  if (newMassive.length !== 0) {
-    DisplayList(newMassive, tbodyDiv, rows, currentPage);
-    document.getElementById("pagination").innerHTML = "";
-    SetupPagination(newMassive, paginationElement, rows);
-  } else {
-    DisplayList(tableData, tbodyDiv, rows, currentPage);
-    document.getElementById("pagination").innerHTML = "";
-    SetupPagination(tableData, paginationElement, rows);
-  }
-});
+})
 
 function DisplayList(items, wrapper, rowsPerPage, page) {
   wrapper.innerHTML = "";
   page--;
 
-  if (buttonSorting1.classList.contains("active")) {
+  if (sortClickImg.classList.contains("transform")) {
     items = items.sort((a, b) => {
       return a.transaction - b.transaction;
     });
   }
-  if (buttonSorting2.classList.contains("active")) {
+  if (!sortClickImg.classList.contains("transform")) {
     items = items.sort((a, b) => {
       return b.transaction - a.transaction;
     });
@@ -518,7 +502,6 @@ function SetupPagination(items, wrapper, rowsPerPage) {
   let buttonBack = document.createElement("tr");
   buttonBack.innerText = "<";
   buttonBack.addEventListener("click", () => {
-    console.log("back");
     if (currentPage !== 1) {
       currentPage--;
       if (newMassive.length !== 0) {
@@ -579,8 +562,8 @@ function checkEmployee(element) {
 }
 
 function checkStatusInput(element) {
-  if (statusInput.value.trim() !== "") {
-    return element === statusInput.value.toLowerCase();
+  if (StatusArr[0].checked || StatusArr[1].checked) {
+    return element === status;
   } else {
     return true;
   }
@@ -620,10 +603,11 @@ function checkDate2(element, start, end) {
 }
 
 searchInput.addEventListener("keyup", () => {
+
   newMassive = tableData.filter((elementOfMassive) => {
     return (
       checkLogo(elementOfMassive.logoName.toLowerCase()) &&
-      checkEmployee(elementOfMassive.name.toLowerCase()) &&
+      checkEmployee(  elementOfMassive.name.toLowerCase()   ) &&
       checkStatusInput(elementOfMassive.status.toLowerCase())
     );
   });
@@ -649,21 +633,31 @@ searchInputByName.addEventListener("keyup", () => {
     SetupPagination(newMassive, paginationElement, rows);
   }
 });
-statusInput.addEventListener("keyup", () => {
-  newMassive = tableData.filter((elementOfMassive) => {
-    return (
-      checkLogo(elementOfMassive.logoName.toLowerCase()) &&
-      checkEmployee(elementOfMassive.name.toLowerCase()) &&
-      checkStatusInput(elementOfMassive.status.toLowerCase())
-    );
-  });
-  console.log(newMassive);
-  if (newMassive.length !== 0) {
-    paginationElement.innerHTML = "";
-    DisplayList(newMassive, tbodyDiv, rows, currentPage);
-    SetupPagination(newMassive, paginationElement, rows);
+
+function check (){
+  if(StatusArr[0].checked){
+    status = 'done'
+  }else{
+    status = 'pending'
   }
+ newMassive = tableData.filter((elementOfMassive) => {
+  return (
+    checkLogo(elementOfMassive.logoName.toLowerCase()) &&
+    checkEmployee(elementOfMassive.name.toLowerCase()) &&
+    checkStatusInput(elementOfMassive.status.toLowerCase())
+  );
 });
+if (newMassive.length !== 0) {
+  DisplayList(newMassive, tbodyDiv, rows, currentPage);
+  document.getElementById("pagination").innerHTML = "";
+  SetupPagination(newMassive, paginationElement, rows);
+} else {
+  DisplayList(tableData, tbodyDiv, rows, currentPage);
+  document.getElementById("pagination").innerHTML = "";
+  SetupPagination(tableData, paginationElement, rows);
+}
+}
+
 $(function () {
   $('input[name="daterange"]').daterangepicker(
     {

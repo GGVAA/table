@@ -1,6 +1,6 @@
 html {
   font-family: Arial, Helvetica, sans-serif;
-  background-color: lightgray;
+  background-color: #E5E5E5
 }
 
 h1 {
@@ -13,8 +13,8 @@ h1 {
 }
 
 table {
-  width:768px;
-  max-width: 768px;
+  width:100%;
+  max-width: 100%;
   background-color: white;
   border-radius: 1em;
   font-size: 1em;
@@ -137,18 +137,19 @@ table td.pages div {
   user-select: none;
 }
 .tableHeader{
-  width:1000px;
+  width:100%;
   display: flex;
-  padding-left: 65px;
+  padding-left: 125px;
 }
 .headerName{
   margin-right: 95px;
 }
 .headerCredentials{
-  margin-right: 180px;
+  margin-right: 290px;
 }
 .headerStatus{
-  margin-right: 5px;
+  margin-right: 65px;
+  margin-left: 50px;
 }
 tfoot{
   width:100%;
@@ -157,18 +158,21 @@ tfoot{
 .menuContainer{
   display: flex;
   justify-content: space-between;
-  width:1000px;
+  width:1400px;
   margin-top: 32px;
   margin-bottom: 10px;
 }
 .menuItem{
+  color: grey;
   height: 42px;
-  width: 190px;
-  border:1px solid grey;
+  width: 200px;
+  border:1px solid #E1E1E1;
+  background-color: white;
   border-radius: 8px;
   display: flex;
   justify-content: start;
   padding-left: 3px;
+  padding-right: 5px;
   align-items: center;
 }
 .menuItem input{
@@ -199,8 +203,9 @@ tfoot{
   color: #6B6F7B;
 }
 .item{
-  width:1000px;
+  width:100%;
   display: flex;
+  justify-content: space-between;
   
 }
 .checkBoxColumn{
@@ -246,7 +251,7 @@ tfoot{
 }
 main .list {
 	width: 100%;
-	max-width: 768px;
+	max-width: 100%;
 	background-color: #FFF;
 	border: 1px solid #CCC;
 	margin-top: 25px;
@@ -255,7 +260,9 @@ main .list {
 
 
 .pagenumbers {
-  width:1030px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width:1390px;
 	display: flex;
 	justify-content: flex-end;
 	align-items: center;
@@ -333,4 +340,47 @@ main .list {
 .active{
   background-color: #9aaca5;
   color:white;
+}
+.sortContainer{
+  height: 42px;
+  width: 157px;
+  border: 1px solid #E1E1E1;
+  border-radius: 10px;
+  background-color: white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.sortContainer p{
+width:112px;
+height:42px;
+text-align: center;
+margin: 0;
+line-height: 42px;
+border-right: 3px solid #E1E1E1;
+}
+.arrowSort{
+  width:22px;
+  height:11px;
+  transition-duration: 0.2s;
+}
+.transform{
+  transform: rotate(180deg);
+}
+.sortClickContainer{
+  width:50px;
+  min-width: 50px;
+  min-height:50px;
+  height:50px;
+  border-radius: 50%;
+  border: 1px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.d-flex{
+  display: flex;
+}
+.totalHeader{
+  margin-left: 35px;
 }
